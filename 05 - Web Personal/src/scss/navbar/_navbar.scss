@@ -1,0 +1,109 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.lateral {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 83rem;
+    background-color: v.$primario;
+    top: 0;
+    left: 0;
+}
+
+@include m.desktop { 
+    .lateral {
+        height: 100%;
+        width: 35rem;
+        position: fixed;
+        box-shadow: 10px 10px 16px -5px rgba(0,0,0,0.1);
+    }
+}
+
+.perfil {
+    display: grid;
+    place-content: center;
+    margin: v.$separacion 0;
+
+    &__avatar {
+        width: 30rem;
+        border-radius: 50rem;
+        box-shadow: 10px 10px 16px -3px rgba(0,0,0,0.1);
+        transition: transform 3s;
+
+        &:hover {
+            transform: scale(1.3) rotate(360deg);
+        }
+    }
+
+    @include m.desktop { 
+        &__avatar {
+            width: 20rem;
+        }
+    }
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__nombre {
+        color: v.$blanco;
+        font-size: 3rem;
+        font-weight: 900;
+        margin: 0;
+    }
+
+    @include m.desktop { 
+        &__nombre {
+            font-size: 2rem;
+        }
+    }
+
+    &__parrafo {
+        color: v.$blanco;
+        font-style: italic;
+    }
+
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: v.$separacion 0;
+    line-height: 4rem;
+
+    @include m.desktop { 
+        margin: 2rem 0;
+    }
+
+    &__link {
+        font-weight: 900;
+        font-size: 2rem;
+        text-transform: uppercase;
+        transition: all .3s;
+
+        &:hover {
+            transform: scale(1.05);
+            color: red;
+        }
+    }
+
+    @include m.desktop { 
+        &__link {
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+.redes {
+    display: flex;
+
+}
+
+
